@@ -787,7 +787,9 @@ class _SettingsState extends State<SettingsPage> with WidgetsBindingObserver {
             },
           ),
           SettingsTile.switchTile(
-            title: Text(translate('note-at-conn-end-tip')),
+            title: Text(
+              '${translate('note-at-conn-end-tip')} (${translate('Requires login')})',
+            ),
             initialValue: _allowAskForNoteAtEndOfConnection,
             onToggle: (v) async {
               await mainSetLocalBoolOption(

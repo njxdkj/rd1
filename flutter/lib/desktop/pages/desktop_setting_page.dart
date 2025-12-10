@@ -561,12 +561,15 @@ class _GeneralState extends State<_General> {
       children.add(_OptionCheckBox(
           context, 'Allow linux headless', kOptionAllowLinuxHeadless));
     }
-    children.add(_OptionCheckBox(
-      context,
-      'note-at-conn-end-tip',
-      kOptionAllowAskForNoteAtEndOfConnection,
-      isServer: false,
-    ));
+    children.add(Tooltip(
+        message: translate('Requires login'),
+        waitDuration: Duration(seconds: 1),
+        child: _OptionCheckBox(
+          context,
+          'note-at-conn-end-tip',
+          kOptionAllowAskForNoteAtEndOfConnection,
+          isServer: false,
+        )));
     return _Card(title: 'Other', children: children);
   }
 
